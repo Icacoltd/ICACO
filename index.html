@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Icaco Ltd | Go-to-Market, Ecommerce & Martech Consulting</title>
+<meta name="description" content="Icaco Ltd is a UK-based consultancy helping businesses grow through go-to-market strategy, ecommerce, and martech advisory — led by senior enterprise SaaS expertise.">
+<link rel="canonical" href="https://icaco.uk/">
+<link rel="icon" type="image/png" href="assets/leaf-black.png">
+
+<meta property="og:title" content="Icaco Ltd | Go-to-Market, Ecommerce & Martech Consulting">
+<meta property="og:description" content="Strategic consulting for go-to-market, ecommerce, and martech — rooted in senior enterprise experience, built for practical growth.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://icaco.uk/">
+<meta property="og:image" content="https://icaco.uk/assets/icaco-social-card.png">
+<meta property="og:locale" content="en_GB">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Icaco Ltd | Go-to-Market, Ecommerce & Martech Consulting">
+<meta name="twitter:description" content="Strategic consulting for go-to-market, ecommerce, and martech — rooted in senior enterprise experience, built for practical growth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15120F;
+    --paper:#FBFAF6;
+    --red:#E31B23;
+    --grey:#6F6A62;
+    --hairline: rgba(21,18,15,0.14);
+    --hairline-strong: rgba(21,18,15,0.28);
+    --serif: 'Fraunces', serif;
+    --sans: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;}
+
+  img{max-width:100%; display:block;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--red);
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(251,250,246,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--hairline);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:0.01em;
+  }
+  .brand img{height:30px; width:auto;}
+  nav.links{
+    display:flex;
+    gap:32px;
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+  }
+  nav.links a{
+    text-decoration:none;
+    color:var(--ink);
+    position:relative;
+    padding-bottom:3px;
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  nav.links a:hover{ border-color:var(--red); color:var(--red); }
+  .nav-cta{
+    font-family:var(--mono);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    border:1px solid var(--ink);
+    padding:9px 16px;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:background .2s ease, color .2s ease;
+  }
+  .nav-cta:hover{ background:var(--ink); color:var(--paper); }
+  .menu-toggle{ display:none; background:none; border:none; font-family:var(--mono); font-size:13px; letter-spacing:.04em; text-transform:uppercase; cursor:pointer; color:var(--ink); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:96px 0 88px;
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:end;
+    border-bottom:1px solid var(--hairline);
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(38px, 5.4vw, 74px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    margin-top:18px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--red);
+  }
+  .hero-sub{
+    max-width:44ch;
+    margin-top:24px;
+    font-size:17px;
+    color:var(--grey);
+  }
+  .hero-actions{
+    margin-top:36px;
+    display:flex;
+    gap:16px;
+    align-items:center;
+  }
+  .btn-primary{
+    font-family:var(--mono);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    background:var(--ink);
+    color:var(--paper);
+    text-decoration:none;
+    padding:14px 22px;
+    display:inline-block;
+    transition:background .2s ease;
+  }
+  .btn-primary:hover{ background:var(--red); }
+  .btn-ghost{
+    font-family:var(--mono);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    text-decoration:none;
+    color:var(--ink);
+    border-bottom:1px solid var(--hairline-strong);
+    padding-bottom:3px;
+  }
+  .btn-ghost:hover{ border-color:var(--red); color:var(--red); }
+
+  .hero-mark{
+    justify-self:end;
+    width:100%;
+    max-width:320px;
+  }
+  .hero-mark img{
+    width:100%;
+    height:auto;
+    opacity:0;
+    transform:translateY(14px) scale(0.97);
+    clip-path:inset(0 100% 0 0);
+    animation:reveal 1.1s cubic-bezier(.22,.68,0,1.01) 0.15s forwards;
+  }
+  @keyframes reveal{
+    to{ opacity:1; transform:translateY(0) scale(1); clip-path:inset(0 0% 0 0); }
+  }
+
+  /* ---------- Section shell ---------- */
+  section{ padding:88px 0; border-bottom:1px solid var(--hairline); }
+  .section-head{
+    display:grid;
+    grid-template-columns:0.55fr 1fr;
+    gap:40px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(28px, 3.2vw, 40px);
+    line-height:1.1;
+    margin-top:10px;
+  }
+  .section-head p{
+    color:var(--grey);
+    max-width:46ch;
+    align-self:end;
+  }
+
+  /* ---------- Services ---------- */
+  .services{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--hairline);
+    border:1px solid var(--hairline);
+  }
+  .service{
+    background:var(--paper);
+    padding:36px 30px 40px;
+    position:relative;
+  }
+  .service .num{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--red);
+    letter-spacing:.06em;
+  }
+  .service h3{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:22px;
+    margin-top:16px;
+    margin-bottom:12px;
+  }
+  .service p{
+    color:var(--grey);
+    font-size:14.5px;
+  }
+  .node{
+    position:absolute;
+    top:34px;
+    right:30px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--ink);
+    opacity:0.15;
+  }
+  .service:hover .node{ background:var(--red); opacity:1; }
+
+  /* ---------- Approach (root / branch / growth) ---------- */
+  .approach-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .approach-item{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:32px;
+    padding:32px 0;
+    border-top:1px solid var(--hairline);
+    align-items:start;
+  }
+  .approach-item:last-child{ border-bottom:1px solid var(--hairline); }
+  .approach-label{
+    font-family:var(--mono);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--grey);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .approach-label .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--red);
+    flex-shrink:0;
+  }
+  .approach-body h3{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:24px;
+    margin-bottom:10px;
+  }
+  .approach-body p{ color:var(--grey); max-width:60ch; }
+
+  /* ---------- Sectors strip ---------- */
+  .sectors{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .sector-tag{
+    font-family:var(--mono);
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    border:1px solid var(--hairline-strong);
+    padding:9px 16px;
+    color:var(--grey);
+  }
+
+  /* ---------- Contact / CTA ---------- */
+  .cta{
+    border-bottom:none;
+    padding:96px 0 100px;
+    text-align:left;
+  }
+  .cta-inner{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:48px;
+    align-items:end;
+  }
+  .cta h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(32px, 4.4vw, 56px);
+    line-height:1.08;
+  }
+  .cta h2 em{ font-style:italic; color:var(--red); }
+  .cta-contact{
+    font-family:var(--mono);
+    font-size:14px;
+  }
+  .cta-contact a{
+    text-decoration:none;
+    display:inline-block;
+    font-size:22px;
+    font-family:var(--serif);
+    font-style:italic;
+    margin:10px 0 20px;
+    border-bottom:1px solid var(--hairline-strong);
+  }
+  .cta-contact a:hover{ color:var(--red); border-color:var(--red); }
+  .cta-meta{ color:var(--grey); font-size:13.5px; line-height:1.7; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:28px 0 48px;
+  }
+  .footer-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.03em;
+    color:var(--grey);
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .footer-row img{ height:20px; opacity:0.7; }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .hero-mark img{ animation:none; opacity:1; transform:none; clip-path:none; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    nav.links{ display:none; }
+    .menu-toggle{ display:block; }
+    .hero{ grid-template-columns:1fr; }
+    .hero-mark{ justify-self:start; max-width:180px; order:-1; }
+    .section-head{ grid-template-columns:1fr; }
+    .services{ grid-template-columns:1fr; }
+    .approach-item{ grid-template-columns:1fr; gap:10px; }
+    .cta-inner{ grid-template-columns:1fr; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Icaco Ltd",
+  "url": "https://icaco.uk",
+  "logo": "https://icaco.uk/assets/leaf-black.png",
+  "description": "Icaco Ltd is a UK-based consultancy offering go-to-market strategy, ecommerce, and martech advisory services, led by senior enterprise SaaS revenue expertise across EMEA.",
+  "areaServed": "GB",
+  "founder": {
+    "@type": "Person",
+    "name": "Yoann Chipotel",
+    "jobTitle": "Director"
+  },
+  "serviceType": ["Go-to-Market Strategy Consulting", "Ecommerce Consulting", "Martech Advisory"],
+  "knowsAbout": ["Go-to-market strategy", "Ecommerce", "Marketing technology", "Enterprise SaaS", "Revenue growth"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Icaco Ltd do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Icaco Ltd is a UK consultancy providing go-to-market strategy, ecommerce, and martech advisory services for growing businesses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who founded Icaco Ltd?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Icaco Ltd was founded by Yoann Chipotel, who draws on a senior enterprise SaaS revenue background across EMEA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What industries does Icaco Ltd work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Icaco Ltd works with businesses across retail, fashion, martech, and travel, alongside other consumer and enterprise sectors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Icaco Ltd based?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Icaco Ltd is registered and based in the United Kingdom."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="assets/leaf-black.png" alt="ICACO LTD. mark">
+      ICACO LTD.
+    </a>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+      <a href="#sectors">Sectors</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Start a conversation</a>
+    <button class="menu-toggle" aria-label="Menu">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap" style="border-bottom:1px solid var(--hairline); padding-left:0; padding-right:0;">
+    <div class="wrap" style="padding:0; grid-column:1;">
+      <span class="eyebrow">Go-to-Market · Ecommerce · Martech</span>
+      <h1>Growth, rooted<br>in strategy. Built<br>to actually <em>work</em>.</h1>
+      <p class="hero-sub">Icaco works alongside teams on go-to-market strategy, ecommerce, and martech — turning senior enterprise experience into practical advisory you can act on this quarter, not just discuss.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start a conversation</a>
+        <a href="#approach" class="btn-ghost">How we work</a>
+      </div>
+    </div>
+    <div class="hero-mark">
+      <img src="assets/leaf-black.png" alt="">
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What we do</span>
+        <div>
+          <h2>Three ways in</h2>
+        </div>
+        <p>Each engagement starts with your actual business — your stage, your stack, your customers — rather than a generic playbook.</p>
+      </div>
+      <div class="services reveal">
+        <div class="service">
+          <span class="node"></span>
+          <span class="num">01</span>
+          <h3>Go-to-market strategy</h3>
+          <p>Positioning, channel strategy, and sequencing for a launch, expansion, or a growth stage that isn't behaving like the last one.</p>
+        </div>
+        <div class="service">
+          <span class="node"></span>
+          <span class="num">02</span>
+          <h3>Ecommerce advisory</h3>
+          <p>The customer journey, conversion path, and commercial model behind a direct-to-consumer or omnichannel business, reworked around how people actually buy.</p>
+        </div>
+        <div class="service">
+          <span class="node"></span>
+          <span class="num">03</span>
+          <h3>Martech advisory</h3>
+          <p>An honest read on your marketing and revenue stack — what's earning its keep, what's redundant, and what's missing before you buy anything new.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How we work</span>
+        <div>
+          <h2>Root, branch, growth</h2>
+        </div>
+        <p>The same sequence, every engagement — named after the shape the mark is drawn from.</p>
+      </div>
+      <div class="approach-list reveal">
+        <div class="approach-item">
+          <div class="approach-label"><span class="dot"></span>Root</div>
+          <div class="approach-body">
+            <h3>Get clear on what's actually true</h3>
+            <p>We start underground, where the thinking happens before anything is visible — auditing your market position, customer journey, and tech stack to name the real gap between where you are and where you want to be.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="approach-label"><span class="dot"></span>Branch</div>
+          <div class="approach-body">
+            <h3>Design the direction that fits</h3>
+            <p>Strategy becomes structure: the channels, systems, and decisions that turn a plan into momentum. Every recommendation is built for your business, not lifted from a generic framework.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="approach-label"><span class="dot"></span>Growth</div>
+          <div class="approach-body">
+            <h3>Build for growth that outlasts us</h3>
+            <p>We leave every engagement with a plan your team can run without us — clear systems, informed owners, and the measures that tell you it's working.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Icaco</span>
+        <div>
+          <h2>A small root of its own</h2>
+        </div>
+        <p>The name comes from <em style="font-style:italic; color:var(--red);">icaco</em> — the Taíno word for the coco plum, a fruit native to Guadeloupe and the wider Caribbean. A reminder that the best growth is grounded in something real.</p>
+      </div>
+      <div class="approach-list reveal" style="max-width:70ch;">
+        <p style="color:var(--grey); padding:0 0 8px;">Icaco Ltd was founded by Yoann Chipotel, drawing on a career in senior enterprise SaaS revenue leadership across EMEA — built on the belief that strategy should be practical enough to act on Monday morning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sectors">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Where we work</span>
+        <div>
+          <h2>Sectors</h2>
+        </div>
+        <p>Generalist by training, specific by engagement — brought in where a growth decision has real weight.</p>
+      </div>
+      <div class="sectors reveal">
+        <span class="sector-tag">Retail &amp; fashion</span>
+        <span class="sector-tag">Ecommerce</span>
+        <span class="sector-tag">Martech &amp; SaaS</span>
+        <span class="sector-tag">Travel</span>
+        <span class="sector-tag">Enterprise software</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Questions</span>
+        <div>
+          <h2>Good to know</h2>
+        </div>
+        <p>A few things people usually ask before reaching out.</p>
+      </div>
+      <div class="approach-list reveal">
+        <div class="approach-item">
+          <div class="approach-label"><span class="dot"></span>What</div>
+          <div class="approach-body">
+            <h3>What does Icaco Ltd do?</h3>
+            <p>Icaco Ltd is a UK consultancy providing go-to-market strategy, ecommerce, and martech advisory for growing businesses.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="approach-label"><span class="dot"></span>Who</div>
+          <div class="approach-body">
+            <h3>Who founded Icaco Ltd?</h3>
+            <p>Yoann Chipotel, who draws on senior enterprise SaaS revenue experience across EMEA.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="approach-label"><span class="dot"></span>Where</div>
+          <div class="approach-body">
+            <h3>Where is Icaco Ltd based?</h3>
+            <p>Icaco Ltd is registered and based in the United Kingdom.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta">
+    <div class="wrap cta-inner">
+      <div class="reveal">
+        <h2>Let's talk <em>growth.</em></h2>
+      </div>
+      <div class="cta-contact reveal">
+        <span class="eyebrow">Get in touch</span>
+        <a href="mailto:hello@icaco.uk">hello@icaco.uk</a>
+        <p class="cta-meta">ICACO LTD.<br>Registered in England &amp; Wales<br>icaco.uk</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© <span id="year"></span> ICACO LTD. All rights reserved.</span>
+    <img src="assets/leaf-black.png" alt="">
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('nav.links');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const open = links.style.display === 'flex';
+      links.style.display = open ? 'none' : 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '64px';
+      links.style.right = '32px';
+      links.style.background = 'var(--paper)';
+      links.style.border = '1px solid var(--hairline)';
+      links.style.padding = '16px 20px';
+      links.style.gap = '14px';
+    });
+  }
+</script>
+
+</body>
+</html>
