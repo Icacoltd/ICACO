@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICACO LTD. — Strategy & Advisory</title>
+<meta name="description" content="ICACO LTD. — Strategic advisory for organisations facing a branching decision.">
+<link rel="icon" type="image/png" href="assets/leaf-black.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15120F;
+    --paper:#FBFAF6;
+    --red:#E31B23;
+    --grey:#6F6A62;
+    --hairline: rgba(21,18,15,0.14);
+    --hairline-strong: rgba(21,18,15,0.28);
+    --serif: 'Fraunces', serif;
+    --sans: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;}
+
+  img{max-width:100%; display:block;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--red);
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(251,250,246,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--hairline);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:0.01em;
+  }
+  .brand img{height:30px; width:auto;}
+  nav.links{
+    display:flex;
+    gap:32px;
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+  }
+  nav.links a{
+    text-decoration:none;
+    color:var(--ink);
+    position:relative;
+    padding-bottom:3px;
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  nav.links a:hover{ border-color:var(--red); color:var(--red); }
+  .nav-cta{
+    font-family:var(--mono);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    border:1px solid var(--ink);
+    padding:9px 16px;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:background .2s ease, color .2s ease;
+  }
+  .nav-cta:hover{ background:var(--ink); color:var(--paper); }
+  .menu-toggle{ display:none; background:none; border:none; font-family:var(--mono); font-size:13px; letter-spacing:.04em; text-transform:uppercase; cursor:pointer; color:var(--ink); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:96px 0 88px;
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:end;
+    border-bottom:1px solid var(--hairline);
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(38px, 5.4vw, 74px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    margin-top:18px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--red);
+  }
+  .hero-sub{
+    max-width:44ch;
+    margin-top:24px;
+    font-size:17px;
+    color:var(--grey);
+  }
+  .hero-actions{
+    margin-top:36px;
+    display:flex;
+    gap:16px;
+    align-items:center;
+  }
+  .btn-primary{
+    font-family:var(--mono);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    background:var(--ink);
+    color:var(--paper);
+    text-decoration:none;
+    padding:14px 22px;
+    display:inline-block;
+    transition:background .2s ease;
+  }
+  .btn-primary:hover{ background:var(--red); }
+  .btn-ghost{
+    font-family:var(--mono);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    text-decoration:none;
+    color:var(--ink);
+    border-bottom:1px solid var(--hairline-strong);
+    padding-bottom:3px;
+  }
+  .btn-ghost:hover{ border-color:var(--red); color:var(--red); }
+
+  .hero-mark{
+    justify-self:end;
+    width:100%;
+    max-width:320px;
+  }
+  .hero-mark img{
+    width:100%;
+    height:auto;
+    opacity:0;
+    transform:translateY(14px) scale(0.97);
+    clip-path:inset(0 100% 0 0);
+    animation:reveal 1.1s cubic-bezier(.22,.68,0,1.01) 0.15s forwards;
+  }
+  @keyframes reveal{
+    to{ opacity:1; transform:translateY(0) scale(1); clip-path:inset(0 0% 0 0); }
+  }
+
+  /* ---------- Section shell ---------- */
+  section{ padding:88px 0; border-bottom:1px solid var(--hairline); }
+  .section-head{
+    display:grid;
+    grid-template-columns:0.55fr 1fr;
+    gap:40px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(28px, 3.2vw, 40px);
+    line-height:1.1;
+    margin-top:10px;
+  }
+  .section-head p{
+    color:var(--grey);
+    max-width:46ch;
+    align-self:end;
+  }
+
+  /* ---------- Services ---------- */
+  .services{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--hairline);
+    border:1px solid var(--hairline);
+  }
+  .service{
+    background:var(--paper);
+    padding:36px 30px 40px;
+    position:relative;
+  }
+  .service .num{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--red);
+    letter-spacing:.06em;
+  }
+  .service h3{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:22px;
+    margin-top:16px;
+    margin-bottom:12px;
+  }
+  .service p{
+    color:var(--grey);
+    font-size:14.5px;
+  }
+  .node{
+    position:absolute;
+    top:34px;
+    right:30px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--ink);
+    opacity:0.15;
+  }
+  .service:hover .node{ background:var(--red); opacity:1; }
+
+  /* ---------- Approach (root / branch / growth) ---------- */
+  .approach-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .approach-item{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:32px;
+    padding:32px 0;
+    border-top:1px solid var(--hairline);
+    align-items:start;
+  }
+  .approach-item:last-child{ border-bottom:1px solid var(--hairline); }
+  .approach-label{
+    font-family:var(--mono);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--grey);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .approach-label .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--red);
+    flex-shrink:0;
+  }
+  .approach-body h3{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:24px;
+    margin-bottom:10px;
+  }
+  .approach-body p{ color:var(--grey); max-width:60ch; }
+
+  /* ---------- Sectors strip ---------- */
+  .sectors{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .sector-tag{
+    font-family:var(--mono);
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    border:1px solid var(--hairline-strong);
+    padding:9px 16px;
+    color:var(--grey);
+  }
+
+  /* ---------- Contact / CTA ---------- */
+  .cta{
+    border-bottom:none;
+    padding:96px 0 100px;
+    text-align:left;
+  }
+  .cta-inner{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:48px;
+    align-items:end;
+  }
+  .cta h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(32px, 4.4vw, 56px);
+    line-height:1.08;
+  }
+  .cta h2 em{ font-style:italic; color:var(--red); }
+  .cta-contact{
+    font-family:var(--mono);
+    font-size:14px;
+  }
+  .cta-contact a{
+    text-decoration:none;
+    display:inline-block;
+    font-size:22px;
+    font-family:var(--serif);
+    font-style:italic;
+    margin:10px 0 20px;
+    border-bottom:1px solid var(--hairline-strong);
+  }
+  .cta-contact a:hover{ color:var(--red); border-color:var(--red); }
+  .cta-meta{ color:var(--grey); font-size:13.5px; line-height:1.7; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:28px 0 48px;
+  }
+  .footer-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.03em;
+    color:var(--grey);
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .footer-row img{ height:20px; opacity:0.7; }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .hero-mark img{ animation:none; opacity:1; transform:none; clip-path:none; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    nav.links{ display:none; }
+    .menu-toggle{ display:block; }
+    .hero{ grid-template-columns:1fr; }
+    .hero-mark{ justify-self:start; max-width:180px; order:-1; }
+    .section-head{ grid-template-columns:1fr; }
+    .services{ grid-template-columns:1fr; }
+    .approach-item{ grid-template-columns:1fr; gap:10px; }
+    .cta-inner{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="assets/leaf-black.png" alt="ICACO LTD. mark">
+      ICACO LTD.
+    </a>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#sectors">Sectors</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Start a conversation</a>
+    <button class="menu-toggle" aria-label="Menu">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap" style="border-bottom:1px solid var(--hairline); padding-left:0; padding-right:0;">
+    <div class="wrap" style="padding:0; grid-column:1;">
+      <span class="eyebrow">Strategy &amp; Advisory</span>
+      <h1>Every decision<br>branches. We map<br>the ones that <em>matter</em>.</h1>
+      <p class="hero-sub">ICACO works with leadership teams facing a genuine fork — a market entry, an operating model, a next stage of growth — and builds the case for which path to take.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start a conversation</a>
+        <a href="#approach" class="btn-ghost">How we work</a>
+      </div>
+    </div>
+    <div class="hero-mark">
+      <img src="assets/leaf-black.png" alt="">
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What we do</span>
+        <div>
+          <h2>Three ways in</h2>
+        </div>
+        <p>Each engagement starts narrow — one real decision, one deadline — rather than a general audit.</p>
+      </div>
+      <div class="services reveal">
+        <div class="service">
+          <span class="node"></span>
+          <span class="num">01</span>
+          <h3>Strategic advisory</h3>
+          <p>Direct counsel to founders and executive teams on the decisions that reshape a business — entry, exit, positioning, and sequencing.</p>
+        </div>
+        <div class="service">
+          <span class="node"></span>
+          <span class="num">02</span>
+          <h3>Operating model design</h3>
+          <p>Structures, decision rights, and reporting lines rebuilt around how the organisation actually needs to work next.</p>
+        </div>
+        <div class="service">
+          <span class="node"></span>
+          <span class="num">03</span>
+          <h3>Growth diagnostics</h3>
+          <p>A clear-eyed read on where growth is coming from, where it's stalling, and which lever is worth pulling first.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How we work</span>
+        <div>
+          <h2>Root, branch, growth</h2>
+        </div>
+        <p>The same sequence, every engagement — named after the shape the mark is drawn from.</p>
+      </div>
+      <div class="approach-list reveal">
+        <div class="approach-item">
+          <div class="approach-label"><span class="dot"></span>Root</div>
+          <div class="approach-body">
+            <h3>Understand what's actually true</h3>
+            <p>Before recommending anything, we get underneath the presenting problem — the numbers, the incentives, the history — so the decision is built on what's real rather than what's assumed.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="approach-label"><span class="dot"></span>Branch</div>
+          <div class="approach-body">
+            <h3>Lay out the real options</h3>
+            <p>Most decisions look binary and aren't. We map the genuine set of paths available, with the trade-offs and second-order consequences of each made explicit.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="approach-label"><span class="dot"></span>Growth</div>
+          <div class="approach-body">
+            <h3>Commit, and build the plan to move</h3>
+            <p>A recommendation on its own changes nothing. We leave every engagement with a sequenced plan, owners, and the milestones that tell you if it's working.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sectors">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Where we work</span>
+        <div>
+          <h2>Sectors</h2>
+        </div>
+        <p>Generalist by training, specific by engagement — brought in where a decision has real weight.</p>
+      </div>
+      <div class="sectors reveal">
+        <span class="sector-tag">Professional services</span>
+        <span class="sector-tag">Consumer &amp; retail</span>
+        <span class="sector-tag">Technology</span>
+        <span class="sector-tag">Financial services</span>
+        <span class="sector-tag">Public &amp; social sector</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta">
+    <div class="wrap cta-inner">
+      <div class="reveal">
+        <h2>Facing a fork <em>right now?</em></h2>
+      </div>
+      <div class="cta-contact reveal">
+        <span class="eyebrow">Get in touch</span>
+        <a href="mailto:hello@icaco.uk">hello@icaco.uk</a>
+        <p class="cta-meta">ICACO LTD.<br>Registered in England &amp; Wales<br>icaco.uk</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© <span id="year"></span> ICACO LTD. All rights reserved.</span>
+    <img src="assets/leaf-black.png" alt="">
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('nav.links');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const open = links.style.display === 'flex';
+      links.style.display = open ? 'none' : 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '64px';
+      links.style.right = '32px';
+      links.style.background = 'var(--paper)';
+      links.style.border = '1px solid var(--hairline)';
+      links.style.padding = '16px 20px';
+      links.style.gap = '14px';
+    });
+  }
+</script>
+
+</body>
+</html>
