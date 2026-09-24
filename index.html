@@ -3,21 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Icaco Ltd | Go-to-Market Strategy & Execution, Ecommerce & Martech</title>
-<meta name="description" content="Icaco Ltd is a UK-based consultancy helping businesses grow through go-to-market strategy and hands-on execution across ecommerce and martech — led by senior enterprise SaaS expertise.">
+<meta name="theme-color" content="#FBFAF6">
+<title>Icaco Ltd | Go-to-Market Strategy &amp; Execution Consulting</title>
+<meta name="description" content="UK consultancy for go-to-market strategy and hands-on execution across ecommerce and martech. Senior enterprise SaaS experience, built for practical growth.">
 <link rel="canonical" href="https://icaco.uk/">
 <link rel="icon" type="image/png" href="assets/leaf-black.png">
 
-<meta property="og:title" content="Icaco Ltd | Go-to-Market Strategy & Execution, Ecommerce & Martech">
-<meta property="og:description" content="Go-to-market strategy and hands-on execution — from buyer discovery to creator partnerships — rooted in senior enterprise experience, built for practical growth.">
+<meta property="og:title" content="Icaco Ltd | Go-to-Market Strategy &amp; Execution Consulting">
+<meta property="og:description" content="Go-to-market strategy and hands-on execution, from buyer discovery to creator partnerships. Senior enterprise experience, built for practical growth.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Icaco">
 <meta property="og:url" content="https://icaco.uk/">
 <meta property="og:image" content="https://icaco.uk/assets/icaco-social-card.png">
 <meta property="og:locale" content="en_GB">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Icaco Ltd | Go-to-Market Strategy & Execution, Ecommerce & Martech">
-<meta name="twitter:description" content="Go-to-market strategy and hands-on execution — from buyer discovery to creator partnerships — rooted in senior enterprise experience, built for practical growth.">
+<meta name="twitter:image" content="https://icaco.uk/assets/icaco-social-card.png">
+<meta name="twitter:title" content="Icaco Ltd | Go-to-Market Strategy &amp; Execution Consulting">
+<meta name="twitter:description" content="Go-to-market strategy and hands-on execution, from buyer discovery to creator partnerships. Senior enterprise experience, built for practical growth.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -50,6 +53,7 @@
   a{color:inherit;}
 
   img{max-width:100%; display:block;}
+  .brand img, .hero-mark img, .footer-row img{ mix-blend-mode:multiply; } /* drops the white box around the mark on the off-white page */
 
   .wrap{
     max-width:1180px;
@@ -347,6 +351,22 @@
   .cta-contact a:hover{ color:var(--red); border-color:var(--red); }
   .cta-meta{ color:var(--grey); font-size:13.5px; line-height:1.7; }
 
+  /* ---------- Focus + section CTAs ---------- */
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
+  .section-cta{ margin-top:40px; display:flex; flex-wrap:wrap; align-items:center; gap:14px 28px; }
+  .section-cta p{ color:var(--grey); font-size:14.5px; max-width:52ch; }
+  .cta-link{
+    font-family:var(--mono); font-size:13px; text-transform:uppercase; letter-spacing:.04em;
+    text-decoration:none; color:var(--ink);
+    display:inline-flex; align-items:center; gap:10px; min-height:44px;
+  }
+  .cta-link .label{ border-bottom:1px solid var(--hairline-strong); padding-bottom:3px; transition:border-color .2s ease, color .2s ease; }
+  .cta-link .arrow{ color:var(--red); }
+  .cta-link:hover .label{ color:var(--red); border-color:var(--red); }
+  .cta-note{ color:var(--grey); font-size:14.5px; max-width:44ch; margin-top:18px; }
+  .footer-row a{ text-decoration:none; padding:8px 0; }
+  .footer-row a:hover{ color:var(--red); }
+
   /* ---------- Footer ---------- */
   footer{
     padding:28px 0 48px;
@@ -388,6 +408,45 @@
     .services{ grid-template-columns:1fr; }
     .approach-item{ grid-template-columns:1fr; gap:10px; }
     .cta-inner{ grid-template-columns:1fr; }
+    .brand{ white-space:nowrap; font-size:17px; }
+    .nav-cta{ padding:9px 12px; font-size:12px; }
+    .nav{ gap:10px; }
+  }
+
+  /* ---------- Refinements ---------- */
+  .services{ grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); }
+  .skip{ position:absolute; left:-9999px; top:8px; background:var(--ink); color:var(--paper); padding:10px 16px; font-family:var(--mono); font-size:13px; z-index:100; text-decoration:none; }
+  .skip:focus{ left:8px; }
+  section[id]{ scroll-margin-top:76px; }
+  .proof{ display:flex; flex-wrap:wrap; gap:10px 40px; padding:22px 0; border-bottom:1px solid var(--hairline); font-family:var(--mono); font-size:12.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--grey); }
+  .proof span{ display:inline-flex; align-items:center; gap:10px; }
+  .proof span::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--red); flex-shrink:0; }
+  /* one consistent left edge for header, hero, proof strip and sections */
+  .wrap.nav{ padding-left:32px; padding-right:32px; }
+  .hero.wrap{ padding-left:32px; padding-right:32px; }
+  .wrap.proof{ padding-left:32px; padding-right:32px; }
+  .hero > .wrap{ margin:0; padding:0; }
+  .cta-contact .eyebrow{ display:block; }
+  .next-steps{ list-style:none; counter-reset:step; margin-top:36px; max-width:48ch; }
+  .next-steps li{ counter-increment:step; display:grid; grid-template-columns:34px 1fr; padding:14px 0; border-top:1px solid var(--hairline); font-size:14.5px; color:var(--grey); }
+  .next-steps li:last-child{ border-bottom:1px solid var(--hairline); }
+  .next-steps li::before{ content:"0" counter(step); font-family:var(--mono); font-size:12px; color:var(--red); padding-top:2px; }
+  .menu-toggle{ padding:12px 4px; min-height:44px; }
+  @media (min-width:861px){
+    .section-head{ grid-template-columns:1fr 1fr; margin-bottom:48px; }
+    .section-head > .eyebrow{ grid-column:1; grid-row:1; }
+    .section-head > div{ grid-column:1; grid-row:2; }
+    .section-head > p{ grid-column:2; grid-row:1 / span 2; align-self:end; }
+  }
+  @media (max-width:860px){
+    nav.links.open{ display:flex; flex-direction:column; position:absolute; top:100%; right:32px; background:var(--paper); border:1px solid var(--hairline); padding:10px 20px; gap:0; }
+    nav.links.open a{ padding:10px 0; }
+    .proof{ gap:8px 24px; }
+    .wrap, .wrap.nav, .hero.wrap, .wrap.proof{ padding-left:20px; padding-right:20px; }
+    nav.links.open{ right:20px; }
+    .hero{ padding-top:32px; padding-bottom:48px; gap:24px; }
+    .hero-mark{ max-width:88px; }
+    section{ padding:64px 0; }
   }
 </style>
 <script type="application/ld+json">
@@ -396,6 +455,20 @@
   "@type": "ProfessionalService",
   "name": "Icaco Ltd",
   "url": "https://icaco.uk",
+  "email": "hello@icaco.uk",
+  "foundingDate": "2026-08-19",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "66 Paul Street",
+    "addressLocality": "London",
+    "postalCode": "EC2A 4NA",
+    "addressCountry": "GB"
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "Companies House company number",
+    "value": "17409356"
+  },
   "logo": "https://icaco.uk/assets/leaf-black.png",
   "description": "Icaco Ltd is a UK-based consultancy offering go-to-market strategy and execution, ecommerce, and martech advisory services, led by senior enterprise SaaS revenue expertise across EMEA.",
   "areaServed": "GB",
@@ -415,113 +488,148 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What does Icaco Ltd do?",
+      "name": "What does Icaco do?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Icaco Ltd is a UK consultancy providing go-to-market strategy and hands-on execution, alongside ecommerce and martech advisory, for growing businesses."
+        "text": "Icaco is a UK consultancy that provides go-to-market strategy and hands-on execution, alongside ecommerce and martech advisory, for growing businesses."
       }
     },
     {
       "@type": "Question",
-      "name": "Does Icaco Ltd only advise, or also help with execution?",
+      "name": "Does Icaco only advise, or also help with execution?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both. Icaco Ltd sets the go-to-market strategy and can also run defined execution programmes, such as structured buyer discovery and creator partnership programmes, particularly for brands entering the UK market."
+        "text": "Both. Icaco sets the go-to-market strategy and can also run defined execution programmes, such as structured buyer discovery and creator partnership programmes, particularly for brands entering the UK market."
       }
     },
     {
       "@type": "Question",
-      "name": "Who founded Icaco Ltd?",
+      "name": "Which industries does Icaco work with?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Icaco Ltd was founded by Yoann Chipotel, who draws on a senior enterprise SaaS revenue background across EMEA."
+        "text": "Retail, fashion, martech and travel, plus consumer and design-led brands entering the UK, and other enterprise sectors."
       }
     },
     {
       "@type": "Question",
-      "name": "What industries does Icaco Ltd work with?",
+      "name": "How does an engagement start?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Icaco Ltd works with businesses across retail, fashion, martech, and travel, and with consumer and design-led brands entering the UK, alongside other enterprise sectors."
+        "text": "With a short email about your goal, timing and who is involved. If there is a fit, we set up an intro call, then send a written proposal covering scope, deliverables, timeline and fees before any work begins."
       }
     },
     {
       "@type": "Question",
-      "name": "Where is Icaco Ltd based?",
+      "name": "How is Icaco's work priced?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Icaco Ltd is registered and based in the United Kingdom."
+        "text": "Fixed fees for defined work, retainers for ongoing support over an agreed term, and performance-linked arrangements for selected sales and partnership work. Everything is agreed in writing first, and third-party budgets are kept separate from fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who founded Icaco?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yoann Chipotel, who has more than 12 years of enterprise SaaS revenue experience across EMEA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Icaco based?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Icaco is registered in England and Wales, with its registered office in London."
       }
     }
   ]
 }
 </script>
+<script>window.LEAF_FALLBACK="data:image/png;base64,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";</script>
 </head>
 <body>
+
+<a class="skip" href="#top">Skip to content</a>
 
 <header>
   <div class="wrap nav">
     <a href="#top" class="brand">
-      <img src="assets/leaf-black.png" alt="ICACO LTD. mark">
-      ICACO LTD.
+      <img src="assets/leaf-black.png" alt="" onerror="this.onerror=null;this.src=window.LEAF_FALLBACK">
+      ICACO
     </a>
-    <nav class="links">
+    <nav class="links" id="site-nav" aria-label="Main">
       <a href="#services">Advisory</a>
       <a href="#execution">Execution</a>
       <a href="#approach">Approach</a>
       <a href="#about">About</a>
       <a href="#sectors">Sectors</a>
     </nav>
-    <a href="#contact" class="nav-cta">Start a conversation</a>
-    <button class="menu-toggle" aria-label="Menu">Menu</button>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">Menu</button>
   </div>
 </header>
 
 <main id="top">
 
-  <section class="hero wrap" style="border-bottom:1px solid var(--hairline); padding-left:0; padding-right:0;">
+  <section class="hero wrap">
     <div class="wrap" style="padding:0; grid-column:1;">
       <span class="eyebrow">Go-to-Market · Strategy &amp; Execution</span>
       <h1>Growth, rooted<br>in strategy. Built<br>to actually <em>work</em>.</h1>
-      <p class="hero-sub">Icaco works alongside teams on go-to-market strategy, ecommerce, and martech — and stays for the execution, from buyer conversations to creator partnerships in market. Senior enterprise experience, turned into work you can act on this quarter, not just discuss.</p>
+      <p class="hero-sub">Icaco helps growth-stage teams turn go-to-market strategy into revenue, then stays to help execute it, from buyer conversations to creator partnerships in market. Senior enterprise experience, practical enough to act on this quarter.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Start a conversation</a>
+        <a href="#contact" class="btn-primary">Get in touch</a>
         <a href="#approach" class="btn-ghost">How we work</a>
       </div>
     </div>
     <div class="hero-mark">
-      <img src="assets/leaf-black.png" alt="">
+      <img src="assets/leaf-black.png" alt="" onerror="this.onerror=null;this.src=window.LEAF_FALLBACK">
     </div>
   </section>
+
+  <div class="wrap proof">
+    <span>12+ years in EMEA enterprise SaaS</span>
+    <span>Retail · Fashion · Martech · Travel</span>
+    <span>Twice the founding EMEA sales hire</span>
+    <span>Strategy, execution &amp; reporting, end to end</span>
+  </div>
 
   <section id="services">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Advisory</span>
         <div>
-          <h2>Three ways in</h2>
+          <h2>Four ways in</h2>
         </div>
-        <p>Each engagement starts with your actual business — your stage, your stack, your customers — rather than a generic playbook.</p>
+        <p>Each engagement starts with your actual business: your stage, your stack, your customers. Never a generic playbook.</p>
       </div>
       <div class="services reveal">
         <div class="service">
           <span class="node"></span>
           <span class="num">01</span>
           <h3>Go-to-market strategy</h3>
-          <p>Positioning, channel strategy, and sequencing for a launch, expansion, or a growth stage that isn't behaving like the last one.</p>
+          <p>Positioning, channels and sequencing for a launch, an expansion, or a growth stage that has stopped behaving like the last one.</p>
         </div>
         <div class="service">
           <span class="node"></span>
           <span class="num">02</span>
           <h3>Ecommerce advisory</h3>
-          <p>The customer journey, conversion path, and commercial model behind a direct-to-consumer or omnichannel business, reworked around how people actually buy.</p>
+          <p>The customer journey, conversion path and commercial model behind a direct-to-consumer or omnichannel business, reworked around how people actually buy.</p>
         </div>
         <div class="service">
           <span class="node"></span>
           <span class="num">03</span>
           <h3>Martech advisory</h3>
-          <p>An honest read on your marketing and revenue stack — what's earning its keep, what's redundant, and what's missing before you buy anything new.</p>
+          <p>An honest read on your marketing and revenue stack — what earns its keep, what is redundant, and what is missing before you buy anything new.</p>
         </div>
+        <div class="service">
+          <span class="node"></span>
+          <span class="num">04</span>
+          <h3>Editorial &amp; presentation support</h3>
+          <p>Proofreading and quality control for audit and consulting reports, coordination with designers on layout and final sign-off, and executive decks that turn findings into a client-ready deliverable.</p>
+        </div>
+      </div>
+      <div class="section-cta reveal">
+        <a class="cta-link" href="mailto:hello@icaco.uk?subject=Advisory%20enquiry"><span class="label">Talk through a go-to-market question</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -533,27 +641,37 @@
         <div>
           <h2>From plan to market</h2>
         </div>
-        <p>Strategy only counts once it meets real customers. Beyond advice, Icaco runs defined, time-boxed programmes that put the plan in front of buyers and creators — with clear scope, deliverables, and a hand-over at the end.</p>
+        <p>Strategy only counts once it meets real customers. Icaco also runs defined, time-boxed programmes that put the plan in front of buyers and creators, with clear scope, deliverables and a handover at the end.</p>
       </div>
       <div class="services reveal">
         <div class="service">
           <span class="node"></span>
           <span class="num">A</span>
           <h3>Qualified customer discovery</h3>
-          <p>Structured conversations with your target UK buyers, turned into a messaging framework, buyer personas, and the hooks that earn attention on social channels. Findings come from the conversations, not from assumptions.</p>
+          <p>Structured conversations with your target UK buyers, turned into a messaging framework, buyer personas and social hooks. Findings come from the conversations, not from assumptions.</p>
         </div>
         <div class="service">
           <span class="node"></span>
           <span class="num">B</span>
           <h3>Creator programmes</h3>
-          <p>Landscape mapping, outreach, and negotiation with UK creators, ending in rights-cleared content your team can use. Creator budgets are held separately from professional fees, so you can see exactly where the money goes.</p>
+          <p>Landscape mapping, outreach and negotiation with UK creators, ending in rights-cleared content your team can use. Handled with full transparency on where the budget goes.</p>
         </div>
         <div class="service">
           <span class="node"></span>
           <span class="num">C</span>
           <h3>UK market entry</h3>
-          <p>For international consumer and design-led brands, discovery and creator work combined into one practical route into the UK — so the first months in market are built on evidence, not guesswork.</p>
+          <p>For international consumer and design-led brands: discovery and creator work combined into one practical route into the UK, so the first months in market rest on evidence, not guesswork.</p>
         </div>
+        <div class="service">
+          <span class="node"></span>
+          <span class="num">D</span>
+          <h3>Report &amp; presentation production</h3>
+          <p>End-to-end production of client-facing reports and executive decks: drafting, formatting, quality control and design coordination, delivered as a finished, presentation-ready document rather than a set of notes.</p>
+        </div>
+      </div>
+      <div class="section-cta reveal">
+        <a href="mailto:hello@icaco.uk?subject=Execution%20support%20enquiry" class="btn-primary">Email us about execution support</a>
+        <p>Tell us where you are in market and what you need to learn or launch next.</p>
       </div>
     </div>
   </section>
@@ -565,28 +683,28 @@
         <div>
           <h2>Root, branch, growth</h2>
         </div>
-        <p>The same sequence, every engagement — named after the shape the mark is drawn from.</p>
+        <p>The same sequence on every engagement, named after the shape the mark is drawn from.</p>
       </div>
       <div class="approach-list reveal">
         <div class="approach-item">
           <div class="approach-label"><span class="dot"></span>Root</div>
           <div class="approach-body">
             <h3>Get clear on what's actually true</h3>
-            <p>We start underground, where the thinking happens before anything is visible — auditing your market position, customer journey, and tech stack to name the real gap between where you are and where you want to be.</p>
+            <p>We start underground, where the thinking happens before anything is visible: auditing your market position, customer journey and tech stack to name the real gap between where you are and where you want to be.</p>
           </div>
         </div>
         <div class="approach-item">
           <div class="approach-label"><span class="dot"></span>Branch</div>
           <div class="approach-body">
             <h3>Design the direction that fits</h3>
-            <p>Strategy becomes structure, then motion: the channels, systems, and decisions that turn a plan into momentum — and, where it helps, Icaco doing the work alongside you. Every recommendation is built for your business, not lifted from a generic framework.</p>
+            <p>Strategy becomes structure, then motion: the channels, systems and decisions that turn a plan into momentum, with Icaco doing the work alongside you where it helps. Every recommendation is built for your business, not lifted from a framework.</p>
           </div>
         </div>
         <div class="approach-item">
           <div class="approach-label"><span class="dot"></span>Growth</div>
           <div class="approach-body">
             <h3>Build for growth that outlasts us</h3>
-            <p>We leave every engagement with something your team can keep running without us — a plan, the learnings from work already done in market, informed owners, and the measures that tell you it's working.</p>
+            <p>We leave you with something your team can keep running: a plan, the learnings from work done in market, clear owners, and the measures that show it is working.</p>
           </div>
         </div>
       </div>
@@ -607,7 +725,7 @@
           <div class="approach-label"><span class="dot"></span>Fixed scope</div>
           <div class="approach-body">
             <h3>A defined piece of work, for a defined fee</h3>
-            <p>Best for an audit, a go-to-market plan, or an execution programme with a clear start and finish. You know the deliverables, the timeline and the cost up front, and any third-party budgets are kept separate from our fees.</p>
+            <p>Best for an audit, a go-to-market plan, or an execution programme with a clear start and finish. You know the deliverables, timeline and cost up front, and any third-party budgets are kept separate from our fees.</p>
           </div>
         </div>
         <div class="approach-item">
@@ -621,9 +739,12 @@
           <div class="approach-label"><span class="dot"></span>Performance-linked</div>
           <div class="approach-body">
             <h3>Reward tied to the revenue we help generate</h3>
-            <p>For selected sales and partnership work, where Icaco's return is linked to the business it brings in. Suited to businesses that want to add commercial reach without adding headcount.</p>
+            <p>For selected sales and partnership work, where Icaco's return is linked to the business it brings in. Suited to companies that want more commercial reach without adding headcount.</p>
           </div>
         </div>
+      </div>
+      <div class="section-cta reveal">
+        <a class="cta-link" href="mailto:hello@icaco.uk?subject=Scoping%20an%20engagement"><span class="label">Tell us what you need scoped</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -635,10 +756,13 @@
         <div>
           <h2>A small root of its own</h2>
         </div>
-        <p>The name comes from <em style="font-style:italic; color:var(--red);">icaco</em> — the Taíno word for the coco plum, a fruit native to Guadeloupe and the wider Caribbean. A reminder that the best growth is grounded in something real.</p>
+        <p>The name comes from <em style="font-style:italic; color:var(--red);">icaco</em>, the Taíno word for the coco plum, a fruit native to Guadeloupe and the wider Caribbean. A reminder that the best growth is grounded in something real.</p>
       </div>
       <div class="approach-list reveal" style="max-width:70ch;">
-        <p style="color:var(--grey); padding:0 0 8px;">Icaco Ltd was founded by Yoann Chipotel, drawing on a career in senior enterprise SaaS revenue leadership across EMEA — built on the belief that strategy should be practical enough to act on Monday morning.</p>
+        <p style="color:var(--grey); padding:0 0 8px;">Icaco was founded by Yoann Chipotel, who has spent more than 12 years in enterprise SaaS revenue across EMEA, in retail, fashion, martech and travel, and twice joined as the founding EMEA sales hire. It is built on one belief: strategy should be practical enough to act on Monday morning.</p>
+      </div>
+      <div class="section-cta reveal">
+        <a class="cta-link" href="mailto:hello@icaco.uk?subject=Project%20enquiry"><span class="label">Email Yoann about your project</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -650,7 +774,7 @@
         <div>
           <h2>Sectors</h2>
         </div>
-        <p>Generalist by training, specific by engagement — brought in where a growth decision has real weight.</p>
+        <p>Generalist by training, specific by engagement. Brought in where a growth decision has real weight.</p>
       </div>
       <div class="sectors reveal">
         <span class="sector-tag">Retail &amp; fashion</span>
@@ -677,31 +801,55 @@
         <div class="approach-item">
           <div class="approach-label"><span class="dot"></span>What</div>
           <div class="approach-body">
-            <h3>What does Icaco Ltd do?</h3>
-            <p>Icaco Ltd is a UK consultancy providing go-to-market strategy and hands-on execution, alongside ecommerce and martech advisory, for growing businesses.</p>
+            <h3>What does Icaco do?</h3>
+            <p>Icaco is a UK consultancy that provides go-to-market strategy and hands-on execution, alongside ecommerce and martech advisory, for growing businesses.</p>
           </div>
         </div>
         <div class="approach-item">
           <div class="approach-label"><span class="dot"></span>How</div>
           <div class="approach-body">
-            <h3>Does Icaco Ltd only advise, or also help with execution?</h3>
-            <p>Both. Icaco Ltd sets the go-to-market strategy and can also run defined execution programmes, such as structured buyer discovery and creator partnership programmes, particularly for brands entering the UK market.</p>
+            <h3>Does Icaco only advise, or also help with execution?</h3>
+            <p>Both. Icaco sets the go-to-market strategy and can also run defined execution programmes, such as structured buyer discovery and creator partnership programmes, particularly for brands entering the UK market.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="approach-label"><span class="dot"></span>Sectors</div>
+          <div class="approach-body">
+            <h3>Which industries does Icaco work with?</h3>
+            <p>Retail, fashion, martech and travel, plus consumer and design-led brands entering the UK, and other enterprise sectors.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="approach-label"><span class="dot"></span>Start</div>
+          <div class="approach-body">
+            <h3>How does an engagement start?</h3>
+            <p>With a short email about your goal, timing and who is involved. If there is a fit, we set up an intro call, then send a written proposal covering scope, deliverables, timeline and fees before any work begins.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="approach-label"><span class="dot"></span>Fees</div>
+          <div class="approach-body">
+            <h3>How is Icaco's work priced?</h3>
+            <p>Fixed fees for defined work, retainers for ongoing support over an agreed term, and performance-linked arrangements for selected sales and partnership work. Everything is agreed in writing first, and third-party budgets are kept separate from fees.</p>
           </div>
         </div>
         <div class="approach-item">
           <div class="approach-label"><span class="dot"></span>Who</div>
           <div class="approach-body">
-            <h3>Who founded Icaco Ltd?</h3>
-            <p>Yoann Chipotel, who draws on senior enterprise SaaS revenue experience across EMEA.</p>
+            <h3>Who founded Icaco?</h3>
+            <p>Yoann Chipotel, who has more than 12 years of enterprise SaaS revenue experience across EMEA.</p>
           </div>
         </div>
         <div class="approach-item">
           <div class="approach-label"><span class="dot"></span>Where</div>
           <div class="approach-body">
-            <h3>Where is Icaco Ltd based?</h3>
-            <p>Icaco Ltd is registered and based in the United Kingdom.</p>
+            <h3>Where is Icaco based?</h3>
+            <p>Icaco is registered in England and Wales, with its registered office in London.</p>
           </div>
         </div>
+      </div>
+      <div class="section-cta reveal">
+        <a class="cta-link" href="mailto:hello@icaco.uk?subject=Question%20about%20Icaco"><span class="label">Email your question to hello@icaco.uk</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -710,11 +858,20 @@
     <div class="wrap cta-inner">
       <div class="reveal">
         <h2>Let's talk <em>growth.</em></h2>
+        <p class="cta-note">A short email is enough to start. Tell us what you are trying to achieve, roughly when, and who is involved.</p>
+        <div class="hero-actions">
+          <a href="mailto:hello@icaco.uk?subject=Project%20enquiry" class="btn-primary">Email us about your project</a>
+        </div>
+        <ol class="next-steps">
+          <li>Send a short note with your goal, timing and who is involved.</li>
+          <li>If there is a fit, we set up an intro call.</li>
+          <li>You receive a written proposal (scope, deliverables, timeline and fees) before any work starts.</li>
+        </ol>
       </div>
       <div class="cta-contact reveal">
         <span class="eyebrow">Get in touch</span>
         <a href="mailto:hello@icaco.uk">hello@icaco.uk</a>
-        <p class="cta-meta">ICACO LTD.<br>Registered in England &amp; Wales<br>icaco.uk</p>
+        <p class="cta-meta">ICACO LTD.<br>Registered in England &amp; Wales, company no. 17409356<br>Registered office: 66 Paul Street, London EC2A 4NA<br>icaco.uk</p>
       </div>
     </div>
   </section>
@@ -723,8 +880,9 @@
 
 <footer>
   <div class="wrap footer-row">
-    <span>© <span id="year"></span> ICACO LTD. All rights reserved.</span>
-    <img src="assets/leaf-black.png" alt="">
+    <span>© <span id="year"></span> ICACO LTD. Registered in England &amp; Wales, no. 17409356.</span>
+    <a href="mailto:hello@icaco.uk">hello@icaco.uk</a>
+    <img src="assets/leaf-black.png" alt="" onerror="this.onerror=null;this.src=window.LEAF_FALLBACK">
   </div>
 </footer>
 
@@ -739,25 +897,17 @@
       }
     });
   }, { threshold: 0.15 });
-
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   const toggle = document.querySelector('.menu-toggle');
-  const links = document.querySelector('nav.links');
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      const open = links.style.display === 'flex';
-      links.style.display = open ? 'none' : 'flex';
-      links.style.flexDirection = 'column';
-      links.style.position = 'absolute';
-      links.style.top = '64px';
-      links.style.right = '32px';
-      links.style.background = 'var(--paper)';
-      links.style.border = '1px solid var(--hairline)';
-      links.style.padding = '16px 20px';
-      links.style.gap = '14px';
-    });
+  const nav = document.getElementById('site-nav');
+  function setMenu(open) {
+    nav.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
   }
+  toggle.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 </script>
 
 </body>
