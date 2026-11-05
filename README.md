@@ -16,3 +16,4 @@ Static one-page site. No build step — just push and go.
 ## Editing content
 
 Everything is in `index.html` — copy, colours, and layout are all in one file (styles in the `<style>` tag at the top). Swap the placeholder email, sector tags, and service copy for the real thing before launch.
+
