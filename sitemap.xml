@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://icaco.uk/</loc></url>
-  <url><loc>https://icaco.uk/privacy/</loc></url>
+  <url><loc>https://icaco.uk/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://icaco.uk/advisory/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://icaco.uk/executive-audit/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://icaco.uk/claude-for-revenue-teams/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://icaco.uk/about/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://icaco.uk/contact/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://icaco.uk/privacy/</loc><lastmod>2026-11-18</lastmod></url>
 </urlset>
